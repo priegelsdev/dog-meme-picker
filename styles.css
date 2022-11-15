@@ -1,7 +1,32 @@
+/* GENERAL STYLINGS */
+
 body {
   box-sizing: border-box;
   margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
 }
+
+/* TYPOGRAPHY */
+
+h1 {
+  color: #0B0E07;
+  font-weight: 900;
+  margin: 0;
+}
+
+h2 {
+  color: #0B0E07;
+  font-size: 24px;
+  margin: 0;
+}
+
+h3 {
+  color: black;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+/* HEADER */
 
 header {
   background-color: #E0DCDB;
@@ -25,17 +50,7 @@ header img {
   text-align: center;
 }
 
-h1 {
-  color: #0B0E07;
-}
-
-h2 {
-  color: #0B0E07;
-}
-
-h3 {
-  color: black;
-}
+/* MAIN */
 
 main {
   width: 500px;
@@ -52,24 +67,11 @@ main {
   margin: 0 auto;
 }
 
-.img-generate-btn {
-  background-color: #E0DCDB;
-  color: #0B0E07;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 25px;
-  font-weight: bold;
-  margin: 15px;
-}
-
-.meme-modal {
-  display: none;
-}
+/*** input field ***/
 
 .emotion-radios {
-  width: 150px;
-  padding: 10px;
-  border: 1px solid gray;
+  width: 200px;
+  border: 1px solid #c5c1c0;
   border-radius: 4px;
   margin-bottom: 15px;
 }
@@ -77,10 +79,49 @@ main {
 .radio {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid gray;
-  padding: 5px 0;
+  border-bottom: 1px solid #c5c1c0;
+  padding: 6px 0;
+  font-weight: 600;
+}
+
+.radio label {
+  position: relative;
+  left: 10px;
+}
+
+.radio input {
+  position: relative;
+  right: 5px;
 }
 
 .radio:last-of-type {
   border-bottom: none;
 }
+
+.gif-check-label {
+  font-weight: 400;
+}
+
+/*****/
+
+.img-generate-btn {
+  background-color: #E0DCDB;
+  color: #0B0E07;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 40px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px;
+  cursor: pointer;
+}
+
+.img-generate-btn:hover, .img-generate-btn:active {
+  background-color: #0B0E07;
+  color: #E0DCDB;
+}
+
+.meme-modal {
+  display: none;
+}
+
