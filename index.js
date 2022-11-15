@@ -48,3 +48,9 @@ function renderEmotionsRadios(dogs) {
 }
 
 renderEmotionsRadios(dogsData);
+
+// event listeners
+
+emotionsEl.addEventListener('change', function(e) {
+  console.log(e.target.id)
+})
