@@ -9,7 +9,36 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+  <header>
+    <div class="header-container">
+
+      <div class="title">
+        <h2>Paco's Pawfect </h2>
+        <h1>Meme Picker</h1>
+      </div>
+      <img src="img/logo.jpg">
+    </div>
+  </header>
+
+  <main>
+    <h3>Select Your Current Emotion</h3>
+    <div class="container">
+      <div class="emotion-radios">
+      <div class="gif-check">
+        <label for="gifs-only-option" class="gif-check-label">Animated GIFs only</label>
+        <input type="checkbox" id="gifs-only-option">
+      </div>
+
+      </div>
+      <button class="img-generate-btn">Get Image</button>
+
+      <div class="meme-modal">
+        <button class="close-modal-btn">X</button>
+        <div class="meme-modal-inner"></div>
+      </div>
+
+    </div> 
+  </main>
 
   <script src="index.js"></script>
 </body>
