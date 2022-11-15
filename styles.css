@@ -59,8 +59,28 @@ main {
   border-radius: 4px;
   padding: 10px 25px;
   font-weight: bold;
+  margin: 15px;
 }
 
 .meme-modal {
   display: none;
+}
+
+.emotion-radios {
+  width: 150px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.radio {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+  padding: 5px 0;
+}
+
+.radio:last-of-type {
+  border-bottom: none;
 }

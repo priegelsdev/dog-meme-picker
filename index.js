@@ -32,7 +32,17 @@ function renderEmotionsRadios(dogs) {
 
   emotionsEl.innerHTML = emotionsStr;} */
   for (let emotion of emotions) {
-    emotionsEl.innerHTML += `<p>${emotion}</p>`
+    emotionsEl.innerHTML += `
+    <div class="radio">
+      <label for="${emotion}">${emotion}</label>
+      <input 
+        type="radio"
+        id="${emotion}"
+        value="${emotion}"
+        name="emotions"
+      >
+    </div>
+    `
   }
 }
 
