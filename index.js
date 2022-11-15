@@ -127,7 +127,13 @@ const dogsData = [
   },
 ]
 
-// creating for of loop for emotion tags
+// DOM objects
+
+const emotionsEl = document.querySelector('.emotion-radios');
+
+
+
+// create function to iterate over emotion array
 
 function getEmotionsArray(dogs) {
   const emotionsArray = [];
@@ -137,9 +143,27 @@ function getEmotionsArray(dogs) {
       emotionsArray.push(emotion);
     }
   }
-  console.log(emotionsArray)
+
   let uniqueEmoArray = [...new Set(emotionsArray)];
-  console.log(uniqueEmoArray)
+  return uniqueEmoArray;
 }
 
-getEmotionsArray(dogsData);
+// create function to render out emotions from emotion array
+
+function renderEmotionsRadios(dogs) {
+  const emotions = getEmotionsArray(dogs);
+  console.log(emotions);
+
+/*   let emotionsStr = "";
+
+  for (let i = 0; i < emotions.length; i++) {
+    emotionsStr += `<p>${emotions[i]}</p>`
+  }
+
+  emotionsEl.innerHTML = emotionsStr;} */
+  for (let emotion of emotions) {
+    emotionsEl.innerHTML += `<p>${emotion}</p>`
+  }
+}
+
+renderEmotionsRadios(dogsData);
