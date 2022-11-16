@@ -1,9 +1,12 @@
 import { dogsData } from '/data.js';
 const emotionsEl = document.querySelector('.emotion-radios');
+const imgGenerateBtn = document.querySelector('.img-generate-btn');
 
 // event listeners
 
-emotionsEl.addEventListener('change', highlightCheckedOption)
+emotionsEl.addEventListener('change', highlightCheckedOption);
+
+imgGenerateBtn.addEventListener('click', getMatchingDogsArray);
 
 // create function to highlight clicked radio
 
@@ -14,6 +17,13 @@ function highlightCheckedOption(e) {
   }
 
   document.getElementById(e.target.id).parentElement.classList.add('highlight')
+}
+
+// create function to connect button to selected emotion
+
+function getMatchingDogsArray(){
+  const selectedEmotion = document.querySelector('input[type="radio"]:checked').value;
+  console.log(selectedEmotion);
 }
 
 // create function to iterate over emotion array
