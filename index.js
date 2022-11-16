@@ -2,6 +2,8 @@ import { dogsData } from '/data.js';
 const emotionsEl = document.querySelector('.emotion-radios');
 const imgGenerateBtn = document.querySelector('.img-generate-btn');
 const gifsOnlyOption = document.querySelector('#gifs-only-option');
+const memeModal = document.querySelector('.meme-modal');
+const memeModalInner = document.querySelector('.meme-modal-inner');
 
 // event listeners
 
@@ -54,7 +56,14 @@ function getSingleDogObject(){
 // create function to render dog 
 
 function renderDog() {
-  console.log(getSingleDogObject());
+  const dogObj = getSingleDogObject();
+  memeModalInner.innerHTML = `
+    <img 
+    class="dog-img"
+    src="img/${dogObj.image}"
+    alt="${dogObj.alt}"
+    >`
+  memeModal.style.display = "flex";
 }
 
 // create function to iterate over emotion array

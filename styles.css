@@ -147,6 +147,13 @@ main {
   border-radius: 3px;
 }
 
+.meme-modal-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
 .close-modal-btn {
   position: absolute;
   right: 0;
