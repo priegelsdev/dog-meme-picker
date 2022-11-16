@@ -133,5 +133,25 @@ main {
 
 .meme-modal {
   display: none;
+ /*  display: flex; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 500px;
+  height: 400px;
+  background-color: #E0DCDB;
+  border: 1px solid #0B0E07;
+  border-radius: 3px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  right: 0;
+  padding: 4px;
+  background-color: transparent;
+  border: none;
 }
 
