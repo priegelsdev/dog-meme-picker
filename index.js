@@ -7,7 +7,7 @@ const gifsOnlyOption = document.querySelector('#gifs-only-option');
 
 emotionsEl.addEventListener('change', highlightCheckedOption);
 
-imgGenerateBtn.addEventListener('click', getMatchingDogsArray);
+imgGenerateBtn.addEventListener('click', renderDog);
 
 // create function to highlight clicked radio
 
@@ -32,8 +32,29 @@ function getMatchingDogsArray(){
     const matchingDogsArray = dogsData.filter(dog => 
       (isGif) ? dog.emotionTags.includes(selectedEmotion) && dog.isGif :
         dog.emotionTags.includes(selectedEmotion));
-    console.log(matchingDogsArray);
+
+    return matchingDogsArray;
   }
+}
+
+// create function to get single dog object
+
+function getSingleDogObject(){
+  const dogsArr = getMatchingDogsArray();
+
+  if (dogsArr.length === 1) {
+    return dogsArr[0];
+  } else {
+    const randomNum = Math.floor(Math.random() * dogsArr.length);
+    return dogsArr[randomNum];
+  }
+}
+
+
+// create function to render dog 
+
+function renderDog() {
+  console.log(getSingleDogObject());
 }
 
 // create function to iterate over emotion array
