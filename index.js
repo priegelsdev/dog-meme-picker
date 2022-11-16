@@ -1,7 +1,20 @@
 import { dogsData } from '/data.js';
 const emotionsEl = document.querySelector('.emotion-radios');
 
+// event listeners
 
+emotionsEl.addEventListener('change', highlightCheckedOption)
+
+// create function to highlight clicked radio
+
+function highlightCheckedOption(e) {
+  const radioArr = document.getElementsByClassName('radio');
+  for (let radio of radioArr) {
+    radio.classList.remove('highlight');
+  }
+
+  document.getElementById(e.target.id).parentElement.classList.add('highlight')
+}
 
 // create function to iterate over emotion array
 
@@ -49,8 +62,3 @@ function renderEmotionsRadios(dogs) {
 
 renderEmotionsRadios(dogsData);
 
-// event listeners
-
-emotionsEl.addEventListener('change', function(e) {
-  console.log(e.target.id)
-})

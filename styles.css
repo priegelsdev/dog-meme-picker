@@ -81,7 +81,6 @@ main {
   justify-content: space-between;
   border-bottom: 1px solid #c5c1c0;
   padding: 6px 0;
-  font-weight: 600;
 }
 
 .radio label {
@@ -98,8 +97,19 @@ main {
   border-bottom: none;
 }
 
+.highlight {
+  background-color: #EFEDEE;
+  font-weight: 600;
+  accent-color: #c77f1e;
+  color: #c77f1e;
+}
+
 .gif-check-label {
   font-weight: 400;
+}
+
+#gifs-only-option {
+  accent-color: #c77f1e;
 }
 
 /*****/
