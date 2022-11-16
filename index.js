@@ -1,6 +1,7 @@
 import { dogsData } from '/data.js';
 const emotionsEl = document.querySelector('.emotion-radios');
 const imgGenerateBtn = document.querySelector('.img-generate-btn');
+const gifsOnlyOption = document.querySelector('#gifs-only-option');
 
 // event listeners
 
@@ -24,7 +25,14 @@ function highlightCheckedOption(e) {
 function getMatchingDogsArray(){
   if(document.querySelector('input[type="radio"]:checked')) {
     const selectedEmotion = document.querySelector('input[type="radio"]:checked').value;
-    console.log(selectedEmotion);
+    const isGif = gifsOnlyOption.checked;
+
+  // filter method with ternary arrow function to match gif option 
+
+    const matchingDogsArray = dogsData.filter(dog => 
+      (isGif) ? dog.emotionTags.includes(selectedEmotion) && dog.isGif :
+        dog.emotionTags.includes(selectedEmotion));
+    console.log(matchingDogsArray);
   }
 }
 
