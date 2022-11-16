@@ -22,8 +22,10 @@ function highlightCheckedOption(e) {
 // create function to connect button to selected emotion
 
 function getMatchingDogsArray(){
-  const selectedEmotion = document.querySelector('input[type="radio"]:checked').value;
-  console.log(selectedEmotion);
+  if(document.querySelector('input[type="radio"]:checked')) {
+    const selectedEmotion = document.querySelector('input[type="radio"]:checked').value;
+    console.log(selectedEmotion);
+  }
 }
 
 // create function to iterate over emotion array
