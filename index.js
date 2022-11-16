@@ -4,12 +4,14 @@ const imgGenerateBtn = document.querySelector('.img-generate-btn');
 const gifsOnlyOption = document.querySelector('#gifs-only-option');
 const memeModal = document.querySelector('.meme-modal');
 const memeModalInner = document.querySelector('.meme-modal-inner');
+const modalBtn = document.querySelector(".close-modal-btn");
 
 // event listeners
 
 emotionsEl.addEventListener('change', highlightCheckedOption);
-
 imgGenerateBtn.addEventListener('click', renderDog);
+modalBtn.addEventListener('click', closeModal);
+
 
 // create function to highlight clicked radio
 
@@ -64,6 +66,12 @@ function renderDog() {
     alt="${dogObj.alt}"
     >`
   memeModal.style.display = "flex";
+}
+
+// create function to close modal 
+
+function closeModal() {
+  memeModal.style.display = "none";
 }
 
 // create function to iterate over emotion array
