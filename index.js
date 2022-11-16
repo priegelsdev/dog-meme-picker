@@ -9,9 +9,8 @@ const modalBtn = document.querySelector(".close-modal-btn");
 // event listeners
 
 emotionsEl.addEventListener('change', highlightCheckedOption);
-imgGenerateBtn.addEventListener('click', renderDog);
 modalBtn.addEventListener('click', closeModal);
-
+imgGenerateBtn.addEventListener('click', renderDog);
 
 // create function to highlight clicked radio
 
@@ -22,6 +21,37 @@ function highlightCheckedOption(e) {
   }
 
   document.getElementById(e.target.id).parentElement.classList.add('highlight')
+}
+
+// create function to close modal 
+
+function closeModal() {
+  memeModal.style.display = "none";
+}
+// create function to render dog 
+
+function renderDog() {
+  const dogObj = getSingleDogObject();
+  memeModalInner.innerHTML = `
+    <img 
+    class="dog-img"
+    src="img/${dogObj.image}"
+    alt="${dogObj.alt}"
+    >`
+  memeModal.style.display = "flex";
+}
+
+// create function to get single dog object
+
+function getSingleDogObject(){
+  const dogsArr = getMatchingDogsArray();
+
+  if (dogsArr.length === 1) {
+    return dogsArr[0];
+  } else {
+    const randomNum = Math.floor(Math.random() * dogsArr.length);
+    return dogsArr[randomNum];
+  }
 }
 
 // create function to connect button to selected emotion
@@ -39,39 +69,6 @@ function getMatchingDogsArray(){
 
     return matchingDogsArray;
   }
-}
-
-// create function to get single dog object
-
-function getSingleDogObject(){
-  const dogsArr = getMatchingDogsArray();
-
-  if (dogsArr.length === 1) {
-    return dogsArr[0];
-  } else {
-    const randomNum = Math.floor(Math.random() * dogsArr.length);
-    return dogsArr[randomNum];
-  }
-}
-
-
-// create function to render dog 
-
-function renderDog() {
-  const dogObj = getSingleDogObject();
-  memeModalInner.innerHTML = `
-    <img 
-    class="dog-img"
-    src="img/${dogObj.image}"
-    alt="${dogObj.alt}"
-    >`
-  memeModal.style.display = "flex";
-}
-
-// create function to close modal 
-
-function closeModal() {
-  memeModal.style.display = "none";
 }
 
 // create function to iterate over emotion array
