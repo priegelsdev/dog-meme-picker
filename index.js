@@ -6,12 +6,22 @@ const memeModal = document.querySelector('.meme-modal');
 const memeModalInner = document.querySelector('.meme-modal-inner');
 const modalBtn = document.querySelector(".close-modal-btn");
 
-// event listeners
+// EVENT LISTENERS
 
 emotionsEl.addEventListener('change', highlightCheckedOption);
-modalBtn.addEventListener('click', closeModal);
 imgGenerateBtn.addEventListener('click', renderDog);
+modalBtn.addEventListener('click', closeModal);
 
+// close modal on click outside
+
+document.addEventListener('click', function(e) {
+  if (e.target != imgGenerateBtn &&
+    !e.target.closest(".meme-modal")) {
+    closeModal(); 
+  }
+});
+
+// FUNCTIONS
 // create function to highlight clicked radio
 
 function highlightCheckedOption(e) {
@@ -28,6 +38,7 @@ function highlightCheckedOption(e) {
 function closeModal() {
   memeModal.style.display = "none";
 }
+
 // create function to render dog 
 
 function renderDog() {
